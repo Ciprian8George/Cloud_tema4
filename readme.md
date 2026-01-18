@@ -56,14 +56,14 @@ JSON
 {
   "result": "Furtunalm (n.) - Starea de pace înșelătoare și electrică ce precede un haos iminent."
 }
-
-##⚠️ Error Handling
+'''
+## ⚠️ Error Handling
 The API implements explicit error handling for common scenarios.
 
 ## How to trigger an error:
 
 ### 1. Invalid/Empty Prompt (400 Bad Request) Send a POST request with an empty string or just spaces.
-
+'''
 Trigger: Send {"prompt": ""} to /prompt.
 
 Response:
@@ -72,7 +72,7 @@ JSON
 {
   "error": "Promptul nu poate fi gol"
 }
-
+'''
 ### 2. Method Not Allowed (405) Try to access /prompt via a GET request instead of POST.
 
 Response: HTML error page or JSON indicating method not allowed.
