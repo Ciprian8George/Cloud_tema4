@@ -40,44 +40,43 @@ Returns information about the API status and the underlying model.
   "model": "nano-tema",
   "status": "online"
 }
-
+```
 ### 2. POST /prompt
 Accepts a JSON body with the prompt and returns the AI's response.
 
 Request:
 
-JSON
+```json
 {
   "prompt": "Inventează un cuvânt pentru sentimentul de liniște dinaintea furtunii."
 }
+'''
 Response:
-
-JSON
+```json
 {
   "result": "Furtunalm (n.) - Starea de pace înșelătoare și electrică ce precede un haos iminent."
 }
-'''
+```
 ## ⚠️ Error Handling
 The API implements explicit error handling for common scenarios.
 
 ## How to trigger an error:
 
 ### 1. Invalid/Empty Prompt (400 Bad Request) Send a POST request with an empty string or just spaces.
-'''
+```json
 Trigger: Send {"prompt": ""} to /prompt.
-
+```
 Response:
-
-JSON
+```json
 {
   "error": "Promptul nu poate fi gol"
 }
-'''
+```
 ### 2. Method Not Allowed (405) Try to access /prompt via a GET request instead of POST.
 
 Response: HTML error page or JSON indicating method not allowed.
 
-☁️ Deployment Implementation
+## ☁️ Deployment Implementation
 The project is deployed on Azure App Service (Linux).
 
 Infrastructure: Created using Azure CLI scripts (az group create, az appservice plan create, az webapp create).
